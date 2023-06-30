@@ -1,8 +1,13 @@
 import "./Layout.scss";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import { ReactNode } from "react";
 
-export default function Layout({ children }) {
+interface ChildrenInterface {
+  children: ReactNode;
+}
+
+export default function Layout({ children }: ChildrenInterface) {
   return (
     <>
       <div className={"c-layout"}>

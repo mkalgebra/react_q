@@ -4,8 +4,14 @@ import { useQuery } from "@tanstack/react-query";
 import PostCard from "../../shared/components/postCard/PostCard";
 import { useNavigate } from "react-router-dom";
 
+interface PostInterface {
+  id: number;
+  title: string;
+  body: string;
+}
+
 export default function Posts() {
-  const { isLoading, error, data } = useQuery({
+  const { isLoading, data } = useQuery({
     queryKey: ["posts"],
     queryFn: () =>
       fetch("https://jsonplaceholder.typicode.com/posts").then((res) =>
@@ -15,7 +21,7 @@ export default function Posts() {
 
   const navigate = useNavigate();
 
-  function openSinglePost(id) {
+  function openSinglePost(id: number) {
     return function () {
       navigate(`/posts/${id}`);
     };
@@ -23,13 +29,11 @@ export default function Posts() {
 
   if (isLoading) return "Loading...";
 
-  if (error) return "An error has occurred: " + error.message;
-
   return (
     <>
       <Layout>
         <section className={"c-posts-container"}>
-          {data.map((i) => (
+          {data.map((i: PostInterface) => (
             <PostCard
               onClick={openSinglePost(i.id)}
               title={i.title}

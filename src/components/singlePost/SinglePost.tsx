@@ -4,10 +4,17 @@ import { useParams } from "react-router-dom";
 import Comment from "../../shared/components/comment/Comment";
 import "./SinglePost.scss";
 
+interface CommentInterface {
+  id: number;
+  email: string;
+  body: string;
+  name: string;
+}
+
 export default function SinglePost() {
   const { id } = useParams();
 
-  const { isLoading, error, data } = useQuery({
+  const { isLoading, data } = useQuery({
     queryKey: ["singlePost", id],
     queryFn: () =>
       fetch(`https://jsonplaceholder.typicode.com/posts/${id}`).then((res) =>
@@ -15,11 +22,7 @@ export default function SinglePost() {
       ),
   });
 
-  const {
-    isLoading: isLoadingComments,
-    error: errorComments,
-    data: commentsData,
-  } = useQuery({
+  const { isLoading: isLoadingComments, data: commentsData } = useQuery({
     queryKey: ["singlePostComments", id],
     queryFn: () =>
       fetch(`https://jsonplaceholder.typicode.com/comments?postId=${id}`).then(
@@ -29,9 +32,6 @@ export default function SinglePost() {
 
   if (isLoading || isLoadingComments) return "Loading...";
 
-  if (error || errorComments)
-    return "An error has occurred: " + error.message || errorComments.message;
-
   return (
     <>
       <Layout>
@@ -39,7 +39,7 @@ export default function SinglePost() {
           <p>{data.title}</p>
           <span>{data.body}</span>
           <div>
-            {commentsData.map((item) => {
+            {commentsData.map((item: CommentInterface) => {
               return (
                 <Comment
                   key={item.id}
