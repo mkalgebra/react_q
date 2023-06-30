@@ -27,7 +27,7 @@ const router = createBrowserRouter(
       element: <UserProfile />,
     },
   ],
-  { basename: import.meta.env.DEV ? "/" : "/react-q/" }
+  { basename: "/react-q/" }
 );
 
 const queryClient = new QueryClient();
