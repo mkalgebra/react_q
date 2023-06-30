@@ -1,0 +1,22 @@
+.c-header {
+  background: rgb(150, 2, 133);
+  background: linear-gradient(
+    45deg,
+    rgba(150, 2, 133, 1) 0%,
+    rgba(1, 180, 217, 1) 100%
+  );
+  min-height: 60px;
+  -webkit-box-shadow: 1px 10px 10px 2px rgba(105, 105, 105, 0.25);
+  -moz-box-shadow: 1px 10px 10px 2px rgba(105, 105, 105, 0.25);
+  box-shadow: 1px 10px 10px 2px rgba(105, 105, 105, 0.25);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}

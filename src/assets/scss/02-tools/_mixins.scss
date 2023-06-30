@@ -1,0 +1,23 @@
+@mixin sm {
+  @media (min-width: #{map-get($breakpoints, 'phone')}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{map-get($breakpoints, 'tablet')}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{map-get($breakpoints, 'desktop')}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{map-get($breakpoints, 'widescreen')}) {
+    @content;
+  }
+}

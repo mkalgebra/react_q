@@ -1,0 +1,28 @@
+.c-comment {
+  border: 1px solid gray;
+  margin: 4px 0;
+  padding: 8px;
+  border-radius: 8px;
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &__email {
+    font-size: 11px;
+  }
+
+  &__body {
+    font-style: italic;
+  }
+
+  &:hover {
+    color: white;
+    cursor: default;
+    background: linear-gradient(
+      45deg,
+      rgba(150, 2, 133, 1) 0%,
+      rgba(1, 180, 217, 1) 100%
+    );
+  }
+}

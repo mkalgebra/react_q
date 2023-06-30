@@ -1,0 +1,29 @@
+.c-post-card {
+  border: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    45deg,
+    rgba(150, 2, 133, 1) 0%,
+    rgba(1, 180, 217, 1) 100%
+  );
+  margin: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &:hover {
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(
+      45deg,
+      rgba(150, 2, 133, 1) 0%,
+      rgba(1, 180, 217, 1) 100%
+    );
+  }
+}

@@ -1,0 +1,12 @@
+.c-layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+
+  &__content {
+    flex: 1;
+    overflow-y: scroll;
+    padding: 16px;
+  }
+}

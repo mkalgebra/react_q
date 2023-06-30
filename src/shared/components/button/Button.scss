@@ -1,0 +1,40 @@
+.c-button {
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 16px;
+
+  &--primary {
+    background: linear-gradient(
+      45deg,
+      rgba(150, 2, 133, 1) 0%,
+      rgba(1, 180, 217, 1) 100%
+    );
+    color: white;
+
+    &:active {
+      background: linear-gradient(
+        45deg,
+        rgba(1, 180, 217, 1) 0%,
+        rgba(150, 2, 133, 1) 100%
+      );
+    }
+  }
+
+  &--secondary {
+    color: black;
+    background-color: white;
+    padding: 8px 16px;
+
+    &:active {
+      background-color: floralwhite;
+    }
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
