@@ -8,24 +8,27 @@ import SinglePost from "./components/singlePost/SinglePost";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import UserProfile from "./components/userProfile/UserProfile";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <LoginForm />,
-  },
-  {
-    path: "/posts",
-    element: <Posts />,
-  },
-  {
-    path: "/posts/:id",
-    element: <SinglePost />,
-  },
-  {
-    path: "/profile",
-    element: <UserProfile />,
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <LoginForm />,
+    },
+    {
+      path: "/posts",
+      element: <Posts />,
+    },
+    {
+      path: "/posts/:id",
+      element: <SinglePost />,
+    },
+    {
+      path: "/profile",
+      element: <UserProfile />,
+    },
+  ],
+  { basename: import.meta.env.DEV ? "/" : "/react-q/" }
+);
 
 const queryClient = new QueryClient();
 
