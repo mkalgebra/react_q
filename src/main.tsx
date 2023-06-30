@@ -27,7 +27,7 @@ const router = createBrowserRouter(
       element: <UserProfile />,
     },
   ],
-  { basename: "/react-q/" }
+  { basename: "/react_q" }
 );
 
 const queryClient = new QueryClient();
