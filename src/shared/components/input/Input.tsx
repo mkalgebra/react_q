@@ -12,6 +12,7 @@ export default function Input(props: InputProps) {
     <>
       <input
         className={"c-input"}
+        data-testid={"c-input"}
         placeholder={props.placeholder}
         type={props.type}
         value={props.value}
