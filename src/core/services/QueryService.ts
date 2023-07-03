@@ -28,7 +28,7 @@ export default function QueryService(
   }
 
   const { isLoading, data, error } = useQuery({
-    queryKey: [key],
+    queryKey: id ? [key, id] : [key],
     queryFn: () => fetch(url).then((res) => res.json()),
   });
 
