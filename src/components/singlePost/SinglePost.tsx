@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import Comment from "../../shared/components/comment/Comment";
 import "./SinglePost.scss";
+import QueryService, { URLPaths } from "../../core/services/QueryService";
 
 interface CommentInterface {
   id: number;
@@ -14,21 +15,14 @@ interface CommentInterface {
 export default function SinglePost() {
   const { id } = useParams();
 
-  const { isLoading, data } = useQuery({
-    queryKey: ["singlePost", id],
-    queryFn: () =>
-      fetch(`https://jsonplaceholder.typicode.com/posts/${id}`).then((res) =>
-        res.json()
-      ),
-  });
+  const { isLoading, data } = QueryService("singlePost", URLPaths.posts, id);
 
-  const { isLoading: isLoadingComments, data: commentsData } = useQuery({
-    queryKey: ["singlePostComments", id],
-    queryFn: () =>
-      fetch(`https://jsonplaceholder.typicode.com/comments?postId=${id}`).then(
-        (res) => res.json()
-      ),
-  });
+  const { isLoading: isLoadingComments, data: commentsData } = QueryService(
+    "singlePostComments",
+    URLPaths.comments,
+    undefined,
+    `postId=${id}`
+  );
 
   if (isLoading || isLoadingComments) return "Loading...";
 
