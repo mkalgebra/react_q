@@ -1,11 +1,14 @@
 import { render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-
 import Button from "../Button";
+
+const mockProps = {
+  text: "text",
+};
 
 describe("<Button />", () => {
   test("displays button", async () => {
-    const { getByTestId } = render(<Button text={"test"} />);
+    const { getByTestId } = render(<Button text={mockProps.text} />);
 
     expect(getByTestId("c-button")).toBeInTheDocument();
   });
@@ -13,9 +16,11 @@ describe("<Button />", () => {
   test("click", async () => {
     const onClick = jest.fn();
 
-    const { getByText } = render(<Button text={"test"} onClick={onClick} />);
+    const { getByText } = render(
+      <Button text={mockProps.text} onClick={onClick} />
+    );
 
-    const button = getByText("test");
+    const button = getByText(mockProps.text);
 
     fireEvent.click(button);
 
@@ -23,10 +28,10 @@ describe("<Button />", () => {
   });
 
   test("displays text", async () => {
-    const { getByText } = render(<Button text={"test"} />);
+    const { getByText } = render(<Button text={mockProps.text} />);
 
-    const button = getByText("test");
+    const button = getByText(mockProps.text);
 
-    expect(button).toHaveTextContent("test");
+    expect(button).toHaveTextContent(mockProps.text);
   });
 });
