@@ -20,6 +20,9 @@
     display: flex;
     flex-direction: column;
     padding: 32px;
+    animation-name: pop-in;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
   }
 
   &__input {
@@ -31,5 +34,14 @@
 
   &__action {
     align-self: flex-end;
+  }
+
+  @keyframes pop-in {
+    0% {
+      width: 400px;
+    }
+    100% {
+      width: 710px;
+    }
   }
 }

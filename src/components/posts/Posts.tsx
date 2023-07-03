@@ -1,6 +1,5 @@
 import "./Posts.scss";
 import Layout from "../../core/hoc/layout/Layout";
-import { useQuery } from "@tanstack/react-query";
 import PostCard from "../../shared/components/postCard/PostCard";
 import { useNavigate } from "react-router-dom";
 import QueryService, { URLPaths } from "../../core/services/QueryService";

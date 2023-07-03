@@ -1,5 +1,4 @@
 import Layout from "../../core/hoc/layout/Layout";
-import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import Comment from "../../shared/components/comment/Comment";
 import "./SinglePost.scss";

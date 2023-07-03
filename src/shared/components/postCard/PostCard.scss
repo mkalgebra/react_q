@@ -25,5 +25,18 @@
       rgba(150, 2, 133, 1) 0%,
       rgba(1, 180, 217, 1) 100%
     );
+    animation-name: zoom-in;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes zoom-in {
+    0% {
+      scale: 1;
+    }
+    100% {
+      scale: 1.05;
+    }
   }
 }
