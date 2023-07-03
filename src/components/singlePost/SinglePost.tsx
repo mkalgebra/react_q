@@ -36,7 +36,7 @@ export default function SinglePost() {
     <>
       <Layout>
         <section className={"c-single-post"}>
-          <p>{data.title}</p>
+          <p className={"c-single-post__title"}>{data.title}</p>
           <span>{data.body}</span>
           <div>
             {commentsData.map((item: CommentInterface) => {

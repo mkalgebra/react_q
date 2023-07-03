@@ -1,11 +1,12 @@
 import Layout from "../../core/hoc/layout/Layout";
 import { Map } from "pigeon-maps";
+import "./UserProfile.scss";
 
 export default function UserProfile() {
   return (
     <>
       <Layout>
-        <section>
+        <section className={"c-user-profile"}>
           <p>
             <b>Name:</b> Admin Admin
           </p>
@@ -30,13 +31,11 @@ export default function UserProfile() {
           <p>
             <b>Role:</b> Admin
           </p>
-          <div>
-            <Map
-              height={500}
-              defaultCenter={[45.81, 15.98]}
-              defaultZoom={7}
-            ></Map>
-          </div>
+          <Map
+            height={500}
+            defaultCenter={[45.81, 15.98]}
+            defaultZoom={7}
+          ></Map>
         </section>
       </Layout>
     </>

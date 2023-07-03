@@ -1,0 +1,12 @@
+.c-user-profile {
+  border: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    45deg,
+    rgba(150, 2, 133, 1) 0%,
+    rgba(1, 180, 217, 1) 100%
+  );
+  margin: 16px;
+  padding: 8px 16px;
+  background-color: white;
+}
