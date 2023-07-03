@@ -26,6 +26,11 @@ export default function Header() {
             text={"Profile"}
             onClick={viewProfile}
           />
+          <Button
+            type={ButtonTypes.secondary}
+            text={"Workflows"}
+            onClick={viewProfile}
+          />
         </div>
         <Button
           type={ButtonTypes.secondary}
