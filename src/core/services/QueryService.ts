@@ -10,7 +10,7 @@ const baseURL = "https://jsonplaceholder.typicode.com";
 export default function QueryService(
   key: string,
   path?: URLPaths,
-  id?: number,
+  id?: string | number,
   params?: string
 ) {
   let url = baseURL;
