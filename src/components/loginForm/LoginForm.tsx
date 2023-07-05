@@ -3,6 +3,7 @@ import Input from "../../shared/components/input/Input";
 import Button from "../../shared/components/button/Button";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import generateToken from "token-generator-mk-q";
 
 export default function LoginForm() {
   useEffect(() => {
@@ -19,7 +20,7 @@ export default function LoginForm() {
 
   function handleSubmit() {
     if (nickname === "admin" && password === "admin") {
-      localStorage.setItem("postinjho-token", "123123123");
+      localStorage.setItem("postinjho-token", generateToken(12, true));
       navigate("/posts");
     }
   }
