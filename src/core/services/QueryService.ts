@@ -27,10 +27,10 @@ export default function QueryService(
     url += `?${params}`;
   }
 
-  const { isLoading, data, error } = useQuery({
+  const { isLoading, data, error, refetch } = useQuery({
     queryKey: id ? [key, id] : [key],
     queryFn: () => fetch(url).then((res) => res.json()),
   });
 
-  return { isLoading, data, error };
+  return { isLoading, data, error, refetch };
 }
