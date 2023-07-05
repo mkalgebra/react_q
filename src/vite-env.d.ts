@@ -1,4 +1,4 @@
 declare module "token-generator-mk-q" {
-  function generateToken(): string;
+  function generateToken(length: number, specialCharacters: boolean): string;
   export default generateToken;
 }
