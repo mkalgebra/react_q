@@ -47,7 +47,9 @@ export default function Posts() {
           <Input
             placeholder={"Search"}
             value={search}
-            onChange={(e: any) => handleChange(e)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              handleChange(e)
+            }
           />
           {data.length ? (
             <div className={"c-posts__container"}>

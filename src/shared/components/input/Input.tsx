@@ -11,6 +11,7 @@ export default function Input(props: InputProps) {
         type={props.type}
         value={props.value}
         onChange={props.onChange}
+        onKeyDown={props.onKeyDown}
       />
     </>
   );

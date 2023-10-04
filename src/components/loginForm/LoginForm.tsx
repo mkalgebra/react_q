@@ -2,7 +2,7 @@ import "./LoginForm.scss";
 import { Input } from "../../shared/components/Input";
 import { Button } from "../../shared/components/Button";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import generateToken from "token-generator-mk-q";
 
 export default function LoginForm() {
@@ -25,6 +25,12 @@ export default function LoginForm() {
     }
   }
 
+  function handleKeyDown(e: React.KeyboardEvent) {
+    if (e.key === "Enter") {
+      handleSubmit();
+    }
+  }
+
   return (
     <>
       <section className={"login-form"}>
@@ -35,7 +41,10 @@ export default function LoginForm() {
             <Input
               placeholder={"Type in your nickname..."}
               value={nickname}
-              onChange={(e: any) => setNickname(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setNickname(e.target.value)
+              }
+              onKeyDown={(e: React.KeyboardEvent) => handleKeyDown(e)}
             />
           </div>
           <div className={"login-form__input"}>
@@ -44,7 +53,10 @@ export default function LoginForm() {
               placeholder={"Type in your password..."}
               type={"password"}
               value={password}
-              onChange={(e: any) => setPassword(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setPassword(e.target.value)
+              }
+              onKeyDown={(e: React.KeyboardEvent) => handleKeyDown(e)}
             />
           </div>
           <div className={"login-form__action"}>
