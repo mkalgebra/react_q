@@ -1,6 +1,6 @@
 import { Layout } from "../../core/hoc/layout";
 import { useParams } from "react-router-dom";
-import { Comment } from "../../shared/components/Comment";
+import { Comment } from "../../shared/components/comment";
 import "./SinglePost.scss";
 import QueryService, { URLPaths } from "../../core/services/QueryService";
 import CommentInterface from "./models/Comment";

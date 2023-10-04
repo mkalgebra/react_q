@@ -1,9 +1,9 @@
 import "./Posts.scss";
 import { Layout } from "../../core/hoc/layout";
-import { PostCard } from "../../shared/components/PostCard";
+import { PostCard } from "../../shared/components/postCard";
 import { useNavigate } from "react-router-dom";
 import QueryService, { URLPaths } from "../../core/services/QueryService";
-import { Input } from "../../shared/components/Input";
+import { Input } from "../../shared/components/input";
 import { useState } from "react";
 import { debounce } from "lodash";
 import PostInterface from "./models/Post";

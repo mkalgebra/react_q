@@ -1,6 +1,6 @@
 import "./Header.scss";
 import { useNavigate } from "react-router-dom";
-import { Button } from "../../../../../shared/components/Button";
+import { Button } from "../../../../../shared/components/button";
 import { ButtonTypes } from "../../../../../shared/constants/ButtonTypes";
 
 export default function Header() {

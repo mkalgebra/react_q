@@ -1,6 +1,6 @@
 import "./LoginForm.scss";
-import { Input } from "../../shared/components/Input";
-import { Button } from "../../shared/components/Button";
+import { Input } from "../../shared/components/input";
+import { Button } from "../../shared/components/button";
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import generateToken from "token-generator-mk-q";
