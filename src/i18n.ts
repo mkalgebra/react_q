@@ -27,7 +27,7 @@ i18n
       escapeValue: false, // not needed for react as it escapes by default
     },
     backend: {
-      loadPath: "/mkalgebra.github.io/locales/{{lng}}/{{ns}}.json",
+      loadPath: "/react_q/locales/{{lng}}/{{ns}}.json",
     },
   });
 
