@@ -1,11 +1,5 @@
 import "./Input.scss";
-
-interface InputProps {
-  placeholder?: string;
-  type?: string;
-  value?: string;
-  onChange?: any;
-}
+import InputProps from "../../models/Input";
 
 export default function Input(props: InputProps) {
   return (

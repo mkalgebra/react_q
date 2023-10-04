@@ -1,17 +1,12 @@
 import "./Posts.scss";
-import Layout from "../../core/hoc/layout/Layout";
-import PostCard from "../../shared/components/postCard/PostCard";
+import { Layout } from "../../core/hoc/layout";
+import { PostCard } from "../../shared/components/PostCard";
 import { useNavigate } from "react-router-dom";
 import QueryService, { URLPaths } from "../../core/services/QueryService";
-import Input from "../../shared/components/input/Input";
+import { Input } from "../../shared/components/Input";
 import { useState } from "react";
 import { debounce } from "lodash";
-
-interface PostInterface {
-  id: number;
-  title: string;
-  body: string;
-}
+import PostInterface from "./models/Post";
 
 export default function Posts() {
   const [search, setSearch] = useState("");

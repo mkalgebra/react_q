@@ -1,10 +1,5 @@
 import "./Comment.scss";
-
-interface CommentProps {
-  name: string;
-  email: string;
-  body: string;
-}
+import CommentProps from "../../models/Comment";
 
 export default function Comment(props: CommentProps) {
   return (

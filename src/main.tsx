@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import LoginForm from "./components/loginForm/LoginForm";
-import Posts from "./components/posts/Posts";
-import SinglePost from "./components/singlePost/SinglePost";
+import { LoginForm } from "./components/loginForm";
+import { Posts } from "./components/posts";
+import { SinglePost } from "./components/singlePost";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import UserProfile from "./components/userProfile/UserProfile";
+import { UserProfile } from "./components/userProfile";
 
 const router = createBrowserRouter(
   [

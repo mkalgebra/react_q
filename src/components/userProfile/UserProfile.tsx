@@ -1,4 +1,4 @@
-import Layout from "../../core/hoc/layout/Layout";
+import { Layout } from "../../core/hoc/layout";
 import { Map } from "pigeon-maps";
 import "./UserProfile.scss";
 

@@ -1,15 +1,5 @@
 import "./Button.scss";
-
-export enum ButtonTypes {
-  primary = "primary",
-  secondary = "secondary",
-}
-
-interface ButtonProps {
-  text: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  type?: ButtonTypes;
-}
+import ButtonProps from "../../models/Button";
 
 export default function Button(props: ButtonProps) {
   return (

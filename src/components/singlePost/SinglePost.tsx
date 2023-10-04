@@ -1,15 +1,9 @@
-import Layout from "../../core/hoc/layout/Layout";
+import { Layout } from "../../core/hoc/layout";
 import { useParams } from "react-router-dom";
-import Comment from "../../shared/components/comment/Comment";
+import { Comment } from "../../shared/components/Comment";
 import "./SinglePost.scss";
 import QueryService, { URLPaths } from "../../core/services/QueryService";
-
-interface CommentInterface {
-  id: number;
-  email: string;
-  body: string;
-  name: string;
-}
+import CommentInterface from "./models/Comment";
 
 export default function SinglePost() {
   const { id } = useParams();

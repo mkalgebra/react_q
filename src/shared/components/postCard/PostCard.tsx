@@ -1,10 +1,5 @@
 import "./PostCard.scss";
-
-interface PostCardProps {
-  title: string;
-  body: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-}
+import PostCardProps from "../../models/PostCard";
 
 export default function PostCard(props: PostCardProps) {
   return (
