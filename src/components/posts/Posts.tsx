@@ -7,9 +7,11 @@ import { Input } from "../../shared/components/input";
 import { useState } from "react";
 import { debounce } from "lodash";
 import PostInterface from "./models/Post";
+import { useTranslation } from "react-i18next";
 
 export default function Posts() {
   const [search, setSearch] = useState("");
+  const { t } = useTranslation();
 
   const { isLoading, data, refetch } = QueryService(
     "posts",
@@ -33,25 +35,20 @@ export default function Posts() {
     debouncedGetPosts();
   }
 
-  if (isLoading)
-    return (
-      <>
-        <span>Loading...</span>
-      </>
-    );
-
   return (
     <>
       <Layout>
         <section className={"c-posts"}>
           <Input
-            placeholder={"Search"}
+            placeholder={t("PLACEHOLDER.SEARCH")}
             value={search}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               handleChange(e)
             }
           />
-          {data.length ? (
+          {isLoading ? (
+            <p>{t("PLACEHOLDER.LOADING")}...</p>
+          ) : data.length ? (
             <div className={"c-posts__container"}>
               {data.map((i: PostInterface) => (
                 <PostCard
@@ -63,7 +60,7 @@ export default function Posts() {
               ))}
             </div>
           ) : (
-            <p>No data.</p>
+            <p>{t("PLACEHOLDER.NO_DATA")}.</p>
           )}
         </section>
       </Layout>

@@ -4,8 +4,11 @@ import { Button } from "../../shared/components/button";
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import generateToken from "token-generator-mk-q";
+import { useTranslation } from "react-i18next";
 
 export default function LoginForm() {
+  const { t } = useTranslation();
+
   useEffect(() => {
     const token = localStorage.getItem("postinjho-token");
     if (token) {
@@ -35,11 +38,11 @@ export default function LoginForm() {
     <>
       <section className={"login-form"}>
         <div className={"login-form__card"}>
-          <h1>Please login in order to proceed</h1>
+          <h1>{t("LOGIN.CAPTION")}</h1>
           <div className={"login-form__input"}>
-            <span>Nickname:</span>
+            <span>{t("LOGIN.USERNAME")}:</span>
             <Input
-              placeholder={"Type in your nickname..."}
+              placeholder={`${t("LOGIN.USERNAME.PLACEHOLDER")}...`}
               value={nickname}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setNickname(e.target.value)
@@ -48,9 +51,9 @@ export default function LoginForm() {
             />
           </div>
           <div className={"login-form__input"}>
-            <span>Password:</span>
+            <span>{t("LOGIN.PASSWORD")}:</span>
             <Input
-              placeholder={"Type in your password..."}
+              placeholder={`${t("LOGIN.PASSWORD.PLACEHOLDER")}...`}
               type={"password"}
               value={password}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -60,7 +63,7 @@ export default function LoginForm() {
             />
           </div>
           <div className={"login-form__action"}>
-            <Button text={"Login"} onClick={handleSubmit} />
+            <Button text={t("LOGIN.ACTION")} onClick={handleSubmit} />
           </div>
         </div>
       </section>

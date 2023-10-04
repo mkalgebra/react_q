@@ -5,10 +5,36 @@
     rgba(150, 2, 133, 1) 0%,
     rgba(1, 180, 217, 1) 100%
   );
-  min-height: 40px;
+  min-height: 60px;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 9px;
+  flex-direction: column;
+
+  p {
+    font-size: 9px;
+  }
+
+  span {
+    padding: 0 8px;
+    font-size: 12px;
+    cursor: pointer;
+    transition-property: font-size;
+    transition-duration: 0.5s;
+  }
+
+  span:hover {
+    font-size: 16px;
+  }
+
+  &__active-lang {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  &__inactive-lang {
+    color: beige;
+    opacity: 0.75;
+  }
 }

@@ -4,9 +4,11 @@ import { Comment } from "../../shared/components/comment";
 import "./SinglePost.scss";
 import QueryService, { URLPaths } from "../../core/services/QueryService";
 import CommentInterface from "./models/Comment";
+import { useTranslation } from "react-i18next";
 
 export default function SinglePost() {
   const { id } = useParams();
+  const { t } = useTranslation();
 
   const { isLoading, data } = QueryService("singlePost", URLPaths.posts, id);
 
@@ -21,7 +23,7 @@ export default function SinglePost() {
     return (
       <>
         <Layout>
-          <span>Loading...</span>
+          <span>{t("PLACEHOLDER.LOADING")}...</span>
         </Layout>
       </>
     );
