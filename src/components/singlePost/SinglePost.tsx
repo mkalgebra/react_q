@@ -23,7 +23,14 @@ export default function SinglePost() {
     `postId=${id}`
   );
 
-  if (isLoading || isLoadingComments) return "Loading...";
+  if (isLoading || isLoadingComments)
+    return (
+      <>
+        <Layout>
+          <span>Loading...</span>
+        </Layout>
+      </>
+    );
 
   return (
     <>

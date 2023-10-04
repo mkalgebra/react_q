@@ -38,7 +38,12 @@ export default function Posts() {
     debouncedGetPosts();
   }
 
-  if (isLoading) return "Loading...";
+  if (isLoading)
+    return (
+      <>
+        <span>Loading...</span>
+      </>
+    );
 
   return (
     <>
@@ -49,16 +54,20 @@ export default function Posts() {
             value={search}
             onChange={(e: any) => handleChange(e)}
           />
-          <div className={"c-posts__container"}>
-            {data.map((i: PostInterface) => (
-              <PostCard
-                onClick={openSinglePost(i.id)}
-                title={i.title}
-                body={i.body}
-                key={i.id}
-              />
-            ))}
-          </div>
+          {data.length ? (
+            <div className={"c-posts__container"}>
+              {data.map((i: PostInterface) => (
+                <PostCard
+                  onClick={openSinglePost(i.id)}
+                  title={i.title}
+                  body={i.body}
+                  key={i.id}
+                />
+              ))}
+            </div>
+          ) : (
+            <p>No data.</p>
+          )}
         </section>
       </Layout>
     </>
