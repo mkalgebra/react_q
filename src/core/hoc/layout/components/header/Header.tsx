@@ -8,14 +8,14 @@ export default function Header() {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  function handleLogout() {
+  const handleLogout = () => {
     localStorage.removeItem("postinjho-token");
     navigate("/");
-  }
+  };
 
-  function viewProfile() {
+  const viewProfile = () => {
     navigate("/profile");
-  }
+  };
 
   return (
     <>

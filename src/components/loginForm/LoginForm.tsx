@@ -21,18 +21,18 @@ export default function LoginForm() {
 
   const navigate = useNavigate();
 
-  function handleSubmit() {
+  const handleSubmit = () => {
     if (nickname === "admin" && password === "admin") {
       localStorage.setItem("postinjho-token", generateToken(12, true));
       navigate("/posts");
     }
-  }
+  };
 
-  function handleKeyDown(e: React.KeyboardEvent) {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") {
       handleSubmit();
     }
-  }
+  };
 
   return (
     <>

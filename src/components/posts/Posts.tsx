@@ -22,18 +22,18 @@ export default function Posts() {
 
   const navigate = useNavigate();
 
-  function openSinglePost(id: number) {
+  const openSinglePost = (id: number) => {
     return function () {
       navigate(`/posts/${id}`);
     };
-  }
+  };
 
   const debouncedGetPosts = debounce(refetch, 500);
 
-  function handleChange(e: any) {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
     debouncedGetPosts();
-  }
+  };
 
   return (
     <>
