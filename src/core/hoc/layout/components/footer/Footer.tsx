@@ -1,12 +1,17 @@
 import "./Footer.scss";
 import { useTranslation } from "react-i18next";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Footer() {
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (lang: string) => {
     i18n.changeLanguage(lang);
+    notify();
   };
+
+  const notify = () => toast(t("NOTIFICATION.LANGUAGE"));
 
   return (
     <>
@@ -35,6 +40,7 @@ export default function Footer() {
           </span>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 }

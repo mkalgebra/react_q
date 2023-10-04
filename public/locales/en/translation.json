@@ -20,5 +20,8 @@
   "PROFILE.PHONE_NUMBER": "Phone number",
   "PROFILE.CITY": "City",
   "PROFILE.COMPANY": "Company",
-  "PROFILE.ROLE": "Role"
+  "PROFILE.ROLE": "Role",
+  "NOTIFICATION.LOGIN": "Missing or wrong data",
+  "NOTIFICATION.LOGOUT": "You are logged out",
+  "NOTIFICATION.LANGUAGE": "Language is changed"
 }

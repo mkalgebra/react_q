@@ -25,6 +25,7 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^13.2.2",
     "react-router-dom": "^6.14.0",
+    "react-toastify": "^9.1.3",
     "token-generator-mk-q": "^1.0.0",
     "ts-jest": "^29.1.0"
   },

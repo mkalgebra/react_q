@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import generateToken from "token-generator-mk-q";
 import { useTranslation } from "react-i18next";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function LoginForm() {
   const { t } = useTranslation();
@@ -21,10 +23,18 @@ export default function LoginForm() {
 
   const navigate = useNavigate();
 
+  const notify = () => toast(t("NOTIFICATION.LOGIN"));
+
   const handleSubmit = () => {
+    if (!nickname || !password) {
+      notify();
+      return;
+    }
     if (nickname === "admin" && password === "admin") {
       localStorage.setItem("postinjho-token", generateToken(12, true));
       navigate("/posts");
+    } else {
+      notify();
     }
   };
 
@@ -66,6 +76,7 @@ export default function LoginForm() {
             <Button text={t("LOGIN.ACTION")} onClick={handleSubmit} />
           </div>
         </div>
+        <ToastContainer />
       </section>
     </>
   );

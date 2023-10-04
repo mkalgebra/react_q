@@ -20,5 +20,8 @@
   "PROFILE.PHONE_NUMBER": "Broj mobitela",
   "PROFILE.CITY": "Grad",
   "PROFILE.COMPANY": "Tvrtka",
-  "PROFILE.ROLE": "Uloga"
+  "PROFILE.ROLE": "Uloga",
+  "NOTIFICATION.LOGIN": "Nepostojeci ili krivi podaci",
+  "NOTIFICATION.LOGOUT": "Odjavljeni ste",
+  "NOTIFICATION.LANGUAGE": "Jezik je promijenjen"
 }
